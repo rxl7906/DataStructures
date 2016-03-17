@@ -53,8 +53,38 @@ class LinkedList{
 	}
 }
 
+class StackEmptyException extends RuntimeException{
+	public StackEmptyException(){
+		super();
+	}
+	public StackEmptyException(String msg){
+		super(msg);
+	}
+}
 public class StackLinkedList{
-	public static void main(String args[]){
-		
+
+	static LinkedList linkedlist = new LinkedList();
+	// peek
+	public static void peek(){
+		System.out.println(linkedlist.head.val);
+	}
+	
+	// push
+	public static void push(int val){
+		linkedlist.insertFront(val);
+	}
+	// pop
+	public static Node pop(){
+		Node tmp;
+		try{
+			tmp = linkedlist.removeFront();
+		} catch(LinkedListEmptyException lle){
+			throw new StackEmptyException("Stack is empty");
+		}
+		return tmp;
+	}
+	// print
+	public static void printStack(){
+		linkedlist.printList();
 	}
 }
