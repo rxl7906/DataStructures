@@ -7,5 +7,10 @@ public class StackLinkedListTest {
 		sll.push(7);
 		sll.push(4);
 		sll.printStack();
+		System.out.println();
+		System.out.println(sll.pop());
+		System.out.println(sll.pop());
+		System.out.println(sll.pop());
+		sll.printStack();
 	}
 }

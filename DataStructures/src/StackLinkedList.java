@@ -46,9 +46,10 @@ class LinkedList{
 	
 	// print linked list
 	public void printList(){
-		while(head!=null){
-			head.printNode();
-			head = head.next;
+		Node tmp = head;
+		while(tmp!=null){
+			tmp.printNode();
+			tmp = tmp.next;
 		}
 	}
 }
@@ -74,14 +75,14 @@ public class StackLinkedList{
 		linkedlist.insertFront(val);
 	}
 	// pop
-	public static Node pop(){
+	public static int pop(){
 		Node tmp;
 		try{
 			tmp = linkedlist.removeFront();
 		} catch(LinkedListEmptyException lle){
 			throw new StackEmptyException("Stack is empty");
 		}
-		return tmp;
+		return tmp.val;
 	}
 	// print
 	public static void printStack(){
